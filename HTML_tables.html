@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>HTML Tables</title>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+    
+  </head>
+  <body>
+    <header>
+      <h1>HTML Tables</h1>
+      <p>Structuring tabular data is a common task, and here we will consider all of the elements and attributes used most often for this purpose.</p>
+  </header>
+  <main>
+      <section>
+          <h3>HTML Table Basics</h3>
+          <p>Here we cover table basics, like rows and cells, headings, making cells span multiple columns and rows, and grouping together cells in a column for styling purposes.</p>
+          <h3>What is a table?</h3>
+          <p>A table is a structured set of data made up of rows and columns (tabular data) that allows for quick and easy lookup of values that indicate a connection between different types of data (a person and their age, a day of the week, or a timetable for a local swimming pool).</p>
+          <h3>Table Styling</h3>
+          <p>Readability is greatly enhanced by CSS styling; on the web, it is a must. Good structure with HTML is also a must, so make sure to use at least a good foundation. </p>
+          <h3>When NOT to use HTML tables</h3>
+          <p>HTML tables should never be used for a website layout, CSS styling should always be used instead. Some main reasons are:</p>
+          <ol>
+            <li><b>Layout tables reduces accessibility for visually impaired users:</b> <u>screen readers</u> (used by blind people) interpret tags that exist in HTML pages and read out the contents to the user. This becomes confusing when table outputs are read by a screen reader over a whole website.</li><br>
+            <li><b>Tables produce tag soup:</b> table layouts are generally more involved in complex markup structures than proper layout techniques; this makes the overall code harder to write, interpret, and maintain.</li><br>
+            <li><b>Tables are not automatically responsive:</b> The use of proper layout containers (like <u>&lt;header&gt;</u>, <u>&lt;section&gt;</u>, <u>&lt;article&gt;</u>, and <u>&lt;div&gt;</u>) default widths are set to 100% of their parent elements. Tables are sized according to their content (by default) instead, so extra measures are needed to get table layout styling to effectively work across a variety of devices.</li>
+          </ol>
+          <p>These are the elements and attributes that go into making a table:</p>
+          <ul>
+            <li><b>&lt;td&gt;:</b> The smallest container inside a table is a table cell, "td" means "table data". Putting these one after another lines the cells up into a row.</li><br>
+            <li><b>&lt;tr&gt;:</b> Used to stop a row from growing, and start placing cells on a subsequent row; "table row";</li><br>
+            <li><b>&lt;th&gt;:</b> "table headers"; a special cell that goes at the start of a row or column and defines the type of data that row or column contains; they allow you to make tables more accessible by associating each header with all the data in the same row or column. Screen readers are then able to read out a whole row or column of data at once.</li><br>
+            <li><b>colspan="#"</b>: allows cells to span columns; the # refers to the number of columns to span.</li><br>
+            <li><b>rowspan="#"</b>: allows cells to span rows; the # refers to the number of rows to span.</li><br>
+            <li><b>&lt;col&gt;</b>:</li><br>
+            <li><b>&lt;colgroup&gt;</b>:</li><br>
+          </ul>
+      </section>
+      <section>
+        <h3>Table examples</h3>
+        <p>Here are a few examples of how to structure tables in HTML:</p>
+        <table>
+          <tr>
+            <td>This is my first cell!</td>
+            <td>This is my second cell!</td>
+            <td>This is my third cell!</td>
+            <td>This is my fourth cell!</td>
+          </tr>
+          <tr>
+            <td>This is my fifth cell!</td>
+            <td>This is my sixth cell!</td>
+            <td>This is my seventh cell!</td>
+            <td>This is my eigth cell!</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>Adding headers with &lt;th&gt; elements</h3>
+        <p>Here is an example of using &lt;th&gt; in a table:</p>
+        <table>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Knocky</th>
+            <th>Flor</th>
+            <th>Ella</th>
+            <th>Juan</th>
+          </tr>
+          <tr>
+            <th>Breed</th>
+            <td>Jack Russell</td>
+            <td>Poodle</td>
+            <td>Streetdog</td>
+            <td>Cocker Spaniel</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td>16</td>
+            <td>9</td>
+            <td>10</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <th>Owner</th>
+            <td>Mother-in-law</td>
+            <td>Me</td>
+            <td>Me</td>
+            <td>Sister-in-law</td>
+          </tr>
+          <tr>
+            <th>Eating Habits</th>
+            <td>Eats everyone's leftovers</td>
+            <td>Nibbles at food</td>
+            <td>Hearty eater</td>
+            <td>Will eat till he explodes</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>Allowing cells to span multiple rows and columns</h3>
+        <p>Some examples of cells spanning multiple rows and columns:</p>
+        <table>
+          <tr>
+            <th colspan="2">Animals</th>
+          </tr>
+          <tr>
+            <th colspan="2" >Hippopotamus</th>
+          </tr>
+          <tr>
+            <th rowspan="2">Horse</th>
+            <td>Mare</td>
+          </tr>
+          <tr>
+            <td>Stallion</td>
+          </tr>
+          <tr>
+            <th colspan="2">Crocodile</th>
+          </tr>
+          <tr>
+            <th rowspan="2">Chicken</th>
+            <td>Hen</td>
+          </tr>
+          <tr>
+            <td>Rooster</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>Providing common styling to columns</h3>
+        <h4>Styling without &lt;col&gt;</h4>
+        <p>When NOT using &lt;col&gt;, styling has to be specified for each &lt;th&gt; or &lt;td&gt; in the table that needs the styling. This is time consuming and tedious. Here is an example:</p>
+        <table>
+          <tr>
+            <th>Data 1</th>
+            <th style="background-color: yellow">Data 2</th>
+          </tr>
+          <tr>
+            <td>Calcutta</td>
+            <td style="background-color: yellow">Orange</td>
+          </tr>
+          <tr>
+            <td>Robots</td>
+            <td style="background-color: yellow">Jazz</td>
+          </tr>
+        </table>
+        <h4>Styling with &lt;col&gt;</h4>
+        <p>When using &lt;col&gt;, the styling information needs to be specified only once using the element. An example:</p>
+        <table>
+          <colgroup>
+            <col />
+            <col style="background-color: yellow" />
+          </colgroup>
+          <tr>
+            <th>Data 1</th>
+            <th>Data 2</th>
+          </tr>
+          <tr>
+            <td>Calcutta</td>
+            <td>Orange</td>
+          </tr>
+          <tr>
+            <td>Robots</td>
+            <td>Jazz</td>
+          </tr>
+        </table><br>
+        <table>
+          <colgroup>
+            <col style="background-color: yellow" span="2" />
+          </colgroup>
+          <tr>
+            <th>Data 1</th>
+            <th>Data 2</th>
+          </tr>
+          <tr>
+            <td>Calcutta</td>
+            <td>Orange</td>
+          </tr>
+          <tr>
+            <td>Robots</td>
+            <td>Jazz</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2>Test of Skill</h2>
+        <p>Here is a timetable made below:</p>
+
+      </section>
+  </main>
+  <footer></footer>
+
+  </body>
+</html>
